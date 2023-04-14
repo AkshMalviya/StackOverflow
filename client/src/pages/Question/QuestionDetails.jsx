@@ -35,7 +35,7 @@ const QuestionDetails = () => {
         }
     }
     const handleShare = ()=>{
-        const url = 'https://stackoverflow-aezi.onrender.com'+ location.pathname
+        const url = 'https://stackoverflow-aksh.netlify.app'+ location.pathname
         copy(url)
     }
     const handleDelete= ()=>{
