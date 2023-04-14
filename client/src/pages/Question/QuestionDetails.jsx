@@ -35,7 +35,7 @@ const QuestionDetails = () => {
         }
     }
     const handleShare = ()=>{
-        const url = 'http://localhost:3000'+ location.pathname
+        const url = 'https://stackoverflow-aezi.onrender.com'+ location.pathname
         copy(url)
     }
     const handleDelete= ()=>{
