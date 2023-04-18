@@ -168,7 +168,7 @@ const QuestionDetails = () => {
                                             <Link to='/Tags' key={tag} className='ans-tags'> {tag} </Link>
                                         ))
                                     } or 
-                                    <Link to='/AskQuestion' style={{textDecoration:'none' , color:'#009dff'}}>ask your question.</Link>
+                                    <Link to='/AskQuestion' style={{textDecoration:'none' , color:'#009dff'}}> Ask your question.</Link>
                                 </p>
                             </section>
                         </div>

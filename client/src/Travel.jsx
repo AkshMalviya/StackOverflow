@@ -8,6 +8,7 @@ import DisplayQuestion from './pages/Question/DisplayQuestion'
 import Tags from './pages/Tags/Tags'
 import Users from './pages/Users/Users'
 import User from './pages/UserProfile/UserProfile'
+import Chat from './pages/Chat/Chat'
 
 const Travel = () => {
   return (
@@ -20,6 +21,8 @@ const Travel = () => {
       <Route path='/Tags' element={<Tags/>}/>
       <Route path='/Users' element={<Users/>}/>
       <Route path={`/Users/:id`} element={<User/>}/>
+      <Route path='/Chat' element={<Chat/>}/>
+
 
     </Routes>
   )

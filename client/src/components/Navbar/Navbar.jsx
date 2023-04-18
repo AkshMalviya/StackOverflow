@@ -35,7 +35,7 @@ const Navbar = () => {
 		</Link>
 		<Link to="/About" className='navlink'>About</Link>
 		<Link to="/Product" className='navlink'>Product</Link>
-		<Link to="/Team" className='navlink'>For Teams</Link>
+		<Link to="/Chat" className='navlink'>Having issue? chat with us</Link>
 		<form action="">
 			<div>
 			<input id="searchbox" type="text" placeholder="Search…"  />

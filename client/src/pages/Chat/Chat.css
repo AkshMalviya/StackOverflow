@@ -1,0 +1,95 @@
+.chatbox {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-top: 50px;
+    height: 100vh;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.chatbox .message {
+    margin-bottom: 10px;
+}
+.chatbox .message.right{
+    margin-bottom: 10px;
+    display: inline-flex;
+    flex-direction: row-reverse;
+    margin-left: auto;
+    justify-items: center;
+    align-items: baseline;
+    flex-flow: row;
+}
+
+.chatbox .message .sender {
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
+}
+.chatbox .message .time {
+    font-size: 12px;
+    color: #999;
+    margin-left: 30px;
+}
+.chatbox .message .text {
+    display: inline-block;
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.chatbox .message.right .text {
+    background-color: #00bfff;
+    color: #fff;
+}
+.chatbox .message.right .sender {
+    text-align: right;
+    margin-right: 10px;
+}
+
+.chatbox .message.right .time {
+    text-align: right;
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+
+.input-msg {
+    width: 98%;
+    padding: 10px;
+    border: 1px solid #3e260e;
+    border-radius: 20px 0 0  20px;
+    font-size: 16px;
+    box-sizing: border-box;
+    left: 50%;
+}
+
+.send-img{
+    height: 31px;
+}
+.input-msg-form .send-msg{
+    margin-top: 0;
+    position: fixed;
+    bottom: 1px;
+    right: 0px;
+    border-radius:  0 20px 20px 0  ;
+    border-left:none ;
+    border: none;
+    padding: 5px;    
+} 
+.input-msg-form .input-msg{
+    position: fixed;
+    bottom: 0px;
+    left: 10px;
+    padding: 12px;
+    cursor: pointer;
+}
+.input-msg-form .send-msg:hover{
+    background-color:  rgb(234, 200, 162);
+}
