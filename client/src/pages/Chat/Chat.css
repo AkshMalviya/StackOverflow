@@ -1,16 +1,22 @@
+.chat-container{
+    height: 100%;
+    background-color: #e0e0e0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
 .chatbox {
     display: flex;
     flex-direction: column;
-    max-width: 80%;
+    max-width: 75%;
     margin-right: auto;
     margin-bottom: 0;
     margin-left: auto;
     margin-top: 50px;
-    height: 100vh;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 20px;
+    height: 90vh;
     margin-bottom: 20px;
 }
 .chatbox .message {
@@ -58,38 +64,104 @@
     margin-left: 0;
     margin-right: 10px;
 }
-
-
 .input-msg {
-    width: 98%;
-    padding: 10px;
-    border: 1px solid #3e260e;
-    border-radius: 20px 0 0  20px;
+    width: 96%;
+    color: #333;
     font-size: 16px;
-    box-sizing: border-box;
-    left: 50%;
+    display: inline-block;
+    margin-right: 0px;
+    padding: 10px;
 }
 
-.send-img{
-    height: 31px;
-}
 .input-msg-form .send-msg{
-    margin-top: 0;
-    position: fixed;
-    bottom: 1px;
-    right: 0px;
-    border-radius:  0 20px 20px 0  ;
-    border-left:none ;
+    background-color: #4CAF50;
     border: none;
-    padding: 5px;    
-} 
-.input-msg-form .input-msg{
-    position: fixed;
-    bottom: 0px;
-    left: 10px;
-    padding: 12px;
-    cursor: pointer;
+    color: white;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 20px;
+    padding: 10px;
 }
 .input-msg-form .send-msg:hover{
-    background-color:  rgb(234, 200, 162);
+    background-color: #5d8e49;
+}
+.input-msg-form{
+    display: flex;
+    align-items: inherit;
+    justify-content: flex-start;
+    position: fixed;
+    top: 90vh;
+    width: 50%;
+    left: calc(100% - 50% - 25%);
+    margin: auto;
+}
+.container {
+    margin-top: 27px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  #sendemail{
+    padding: 7px 12px;
+    border: 1px solid blue;
+    border-radius: 3px;
+    background-color: #e7f8fe;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  .container{
+    margin-top: 35px;
+    height: 100vh;
+    max-width: 40%;
+  }
+  h1 {
+    text-align: center;
+  }
+  form {
+    margin-top: 20px;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+#email,#otp{
+    width: 95%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+.authenticate{
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+@media only screen and (max-width: 780px) {
+    .chat-container {
+      width: 100vw;
+    }
+    .chatbox{
+      min-width: 100vw;
+    }
+    .input-msg-form{
+      min-width: 100vw;
+      left:10vw;
+    }
+    .chatbox .message.right{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .chatbox .message{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
 }

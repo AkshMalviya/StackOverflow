@@ -28,11 +28,11 @@ const DisplayAnswer = ({question}) => {
                             }
                         </div>
                         <div>
-                            <p>answer {moment(ans.answeredOn).fromNow()}</p>
+                            <p>answered {moment(ans.answeredOn).fromNow()}</p>
                             <Link to={`/Users/${ans.userId}`} className='user-link' style={{color:'#0086d8'}}>
                                 <Avatar backgroundColor='green' px='8px' py='5px'>{ans.userAnswered.charAt(0).toUpperCase()}</Avatar>
                                 <div>
-                                    {ans.userAnswer}
+                                    {ans.userAnswered}
                                 </div>
                             </Link>
                         </div>

@@ -24,13 +24,16 @@
 }
 
 .side-nav-links{
-    text-decoration: none;
-    color: #3a3a3a;
+    text-decoration: none !important;
+    color: #3a3a3a !important;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 10px;
+    align-items: center ;
+    justify-content: start;
     transition: 0.2s;
+    padding-left: 7px;
+}
+.side-nav-links p{
+    margin: 12px 0px ;
 }
 
 .side-nav-links:hover{
@@ -41,4 +44,7 @@
     color: black;
     background-color: rgb(225, 225 , 225);
     border-right: solid 3px  #ef8236;
+}
+.menuIcon{
+    display: none;
 }

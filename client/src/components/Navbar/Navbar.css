@@ -2,7 +2,7 @@ body{
     margin: 0;
     font-family: "Gill Sans", sans-serif;
     padding: 0;
-    font-size: 13px;
+    font-size: 13px;   
 }
 .main-nav{
     position: fixed;
@@ -33,13 +33,14 @@ body{
     margin-right:10px ;
 }
 .navlink{
-    text-decoration: none;
+    text-decoration: none !important;
     color: black;
     padding: 5px 10px;
     border-radius: 15px;
 }
 .navlink:hover , #mainIco:hover{
     background-color: rgb(206, 200, 200);
+    color: inherit;
 }
 .Nav form{
     flex-grow: 1;
@@ -48,7 +49,7 @@ body{
     margin-left: 15px;
 }
 .Nav form input{
-    min-width: 90%;
+    width: 87%;
     margin: 0;
     border: solid 1px #0000003e;
     border-radius: 3px;
@@ -56,7 +57,7 @@ body{
 #searchbox {
     display: inline-block;
     position: relative;
-    width: 200px;
+    top: -10px;
     height: 32px!important;
     white-space: nowrap;
 	padding: 5px 10px 5px 35px;
@@ -65,7 +66,7 @@ body{
 }
 svg{
 	position: absolute;
-	top: 7px;
+	top: -3px;
 	left: 20px;
 }
 .login-btn{
@@ -78,3 +79,53 @@ svg{
 .login-btn:hover{
     background-color: #d3e4eb;
 }
+.fa-bar{
+    display: none;
+}
+
+@media only screen and (max-width: 780px) {
+    .main-nav{
+        font-size: 13px;
+        width: 100%;
+    }
+    .Nav{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+    }
+    .navlink{
+        margin-bottom: 10px;
+    }
+    .navlink:hover{
+        background-color: rgb(206, 200, 200);
+        color: inherit;
+    }
+    #searchbox{
+        width: 90vw;
+        margin-bottom: 10px
+    }
+    .login-btn{
+        display: inline;
+        position:absolute;
+        margin-top: 5px;
+        top: 8%;
+        left: 65%;
+    }
+    .fa-bar{
+        display: flex;
+        padding: initial;
+        position: absolute;
+        left: 80%;
+        top: 8%;
+    }
+    .drop-menu{
+        display: none;
+        text-decoration: none !important;
+        color: black;
+        padding: 5px 10px;
+        border-radius: 15px;
+    }
+}  
+

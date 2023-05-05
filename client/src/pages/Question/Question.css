@@ -117,7 +117,9 @@
     padding-bottom: 20px;
     border-bottom: solid 1px rgba(0, 0, 0, 0.112);
 }
-
+.post-ans-container{
+    margin-top: 20px;
+}
 .display-ans p{
     font-size: 14px;
     line-height: 18px;

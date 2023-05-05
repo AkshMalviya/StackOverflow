@@ -16,11 +16,7 @@ const AskQuestion = () => {
         console.log({questionTitle,questionBody, questionTags })
         dispatch(askQuestion({questionTitle, questionBody, questionTags, userPosted : User.result.name , userId:User?.result?._id}, navigate ))
     }
-    const handleEnter = (e)=>{
-        if(e.key === "Enter"){
-            setQuestionBody(questionBody + "\n")
-        }
-    }
+    
   return (
     <div className="ask-question">
         <div className="ask-ques-container">
@@ -35,7 +31,7 @@ const AskQuestion = () => {
                     <label htmlFor="ask-ques-body">
                         <h4>Body</h4>
                         <p>Include all the information someone would need to answer your question</p>
-                        <textarea name="body" id="ask-ques-body" cols="30" rows="10" onKeyPress={handleEnter} onChange={(e) => setQuestionBody(e.target.value)}></textarea>
+                        <textarea name="body" id="ask-ques-body" cols="30" rows="10"  onChange={(e) => setQuestionBody(e.target.value)}></textarea>
                     </label>
                     <label htmlFor="ask-ques-tags">
                         <h4>Title</h4>

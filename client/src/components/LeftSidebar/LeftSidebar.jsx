@@ -1,10 +1,15 @@
-import React from 'react'
+import React , { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import Globe from '../../assets/Globe.svg'
 import './LeftSidebar.css'
 const LeftSidebar = () => {
+    const [active, setActive] = useState()
+    const handleDropMenu = ()=>{
+		setActive(!active)
+	}
   return (
     <div className='left-sidebar'>
+        <img className='menuIcon' src="https://img.icons8.com/3d-fluency/50/null/menu.png" onClick={handleDropMenu}/>
         <nav className='side-nav'>
             <NavLink to='/' className='side-nav-links' activeClassName='acitve'>
                 <p>Home</p>
@@ -15,7 +20,7 @@ const LeftSidebar = () => {
                 </div>
                 <NavLink to='/Question' className='side-nav-links' activeClassName='active'>
                     <img src={Globe} alt="globe" />
-                    <p style={{paddingLeft:'10px'}}>Questions</p>
+                    <p style={{paddingLeft:'12px'}}>Questions</p>
                 </NavLink>
                 <NavLink to='/Tags' className='side-nav-links' activeClassName='active' style={{paddingLeft:'10px'}}>
                     <p>Tags</p> 

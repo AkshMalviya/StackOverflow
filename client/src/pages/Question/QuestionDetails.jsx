@@ -150,13 +150,13 @@ const QuestionDetails = () => {
                             {
                                 question.noOfAnswer !== 0 && (
                                     <section>
-                                        <h3>{question.noOfAnswer} Answer</h3>
+                                        <h4>{question.noOfAnswer} Answer</h4>
                                         <DisplayAnswer key={question._id} question={question}/>
                                     </section>
                                 )
                             }
                             <section className='post-ans-container'>
-                                <h3>Your Answer</h3>
+                                <h4>Your Answer</h4>
                                 <form onSubmit={ (e) => handlePostAns(e, question.answer.length)}>
                                     <textarea name="" id="" cols="30" rows="10" onChange={e => setAnswer(e.target.value)}></textarea><br />
                                     <input type="submit" value="Post Your Answer" className='post-ans-btn' />
