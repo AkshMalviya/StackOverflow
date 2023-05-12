@@ -9,7 +9,7 @@ const Chat = () => {
     const User = useSelector((state)=> (state.currentUserReducer))
     const [allMsg, setAllMsg] = useState(['Hii what can i do for you?','I am here for you to solve all programming doubts'])
     const [inputValue, setInputValue] = useState('');
-    const [isAuthenticated, setIsAuthenticated] = useState(true)
+    const [isAuthenticated, setIsAuthenticated] = useState(false)
     const handleSendMessage = (e) => {
     e.preventDefault()
     if (inputValue === ''){

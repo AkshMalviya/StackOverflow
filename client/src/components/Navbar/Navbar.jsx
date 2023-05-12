@@ -28,7 +28,7 @@ const Navbar = () => {
 		}
 		dispatch(setCurrentUser(JSON.parse(localStorage.getItem('Profile'))))
 	}, [dispatch])
-	const [isActive, setActive] = useState(false);
+	const [isActive, setActive] = useState(true);
 	const handleDropMenu = ()=>{
 		setActive(!isActive)
 	}
@@ -39,9 +39,9 @@ const Navbar = () => {
 		<Link to="/">
 			<img src={logo} alt="logo" id='mainIco'/>
 		</Link>
-		<Link to="/About" className={isActive ? 'drop-menu' : 'navlink'}>About</Link>
-		<Link to="/Product" className={isActive ? 'drop-menu' : 'navlink'}>Product</Link>
-		<Link to="/Chat" className={isActive ? 'drop-menu' : 'navlink'}>Having issue? chat with us</Link>
+		<Link to="/About" className={`navlink ${isActive ? 'drop-menu' : ''}`}>About</Link>
+		<Link to="/Product" className={`navlink ${isActive ? 'drop-menu' : ''}`}>Product</Link>
+		<Link to="/Chat" className={`navlink ${isActive ? 'drop-menu' : ''}`}>Having issue? chat with us</Link>
 		<form className={isActive ? 'drop-menu' : ''}>
 			<div className='form-container'>
 			<input id="searchbox" type="text" placeholder="Search…"  />
