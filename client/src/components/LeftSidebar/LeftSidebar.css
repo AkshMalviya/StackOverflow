@@ -49,22 +49,7 @@
     display: none;
 }
 @media only screen and (max-width: 780px) {
-    .menuIcon{
-        margin-top: 50px;
-        display: block;
-    }
-    .drop-menu{
-        display: none;
-        width: 0vw;
-    }   
     .left-sidebar{
-        height: 45vh;
-        display:inline ;
-        position: relative;
-        float: left;
+        display: none;
     }
-    .side-nav{
-        margin-top: 0px;
-        height: fit-content;
-    }            
 }

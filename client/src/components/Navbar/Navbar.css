@@ -64,7 +64,7 @@ body{
     box-sizing: border-box;
     visibility: visible!important
 }
-svg{
+.search-icon{
 	position: absolute;
 	top: -3px;
 	left: 20px;
@@ -113,12 +113,12 @@ svg{
         top: 8%;
         left: 65%;
     }
+
     .fa-bar{
         display: flex;
-        padding: initial;
         position: absolute;
-        left: 80%;
-        top: 8%;
+        left: 88%;
+        top: 10%;
     }
     .drop-menu{
         display: none;
@@ -126,6 +126,12 @@ svg{
         color: black;
         padding: 5px 10px;
         border-radius: 15px;
+    }
+    #mainIco{
+        padding: 0%;
+    }
+    .profile-logo{
+        display: none;
     }
 }  
 

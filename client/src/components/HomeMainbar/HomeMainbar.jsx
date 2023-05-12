@@ -1,5 +1,7 @@
 import React from 'react'
 import './HomeMainbar.css'
+import { NavLink } from 'react-router-dom'
+import Globe from '../../assets/Globe.svg'
 import { useNavigate, useLocation } from 'react-router-dom'
 import QuestionList from './QuestionList'
 import { useSelector } from 'react-redux'
@@ -75,6 +77,21 @@ const HomeMainbar = () => {
     }
   return (
     <div className='main-bar'>
+        <div className='nav-links'>
+            <NavLink to='/' className='side-nav-links' activeClassName='active'>
+                <p>Home</p>
+            </NavLink>
+            <NavLink to='/Question' className='side-nav-links' activeClassName='active'>
+                    <img src={Globe} alt="globe" />
+                    <p style={{paddingLeft:'12px'}}>Questions</p>
+            </NavLink>
+            <NavLink to='/Tags' className='side-nav-links' activeClassName='active' style={{paddingLeft:'10px'}}>
+                    <p>Tags</p> 
+            </NavLink>
+            <NavLink to='/Users' className='side-nav-links' activeClassName='active' style={{paddingLeft:'10px'}}>
+                    <p>User</p>
+            </NavLink>
+        </div>
         <div className="main-bar-header">
             {
             location.pathname === '/' ? <h1>Top Question</h1>: <h1>All Questions</h1>

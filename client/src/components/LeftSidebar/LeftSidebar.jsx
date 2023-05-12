@@ -9,9 +9,6 @@ const LeftSidebar = () => {
 	}
   return (
     <div className='left-sidebar'>
-        <button>
-        <img className='menuIcon' src="https://img.icons8.com/3d-fluency/30/null/menu.png" onClick={handleDropMenu}/>
-        </button>
         <nav className={`side-nav ${active ? 'drop-menu' : ''}`}>
             <NavLink to='/' className='side-nav-links' activeClassName='acitve'>
                 <p>Home</p>
