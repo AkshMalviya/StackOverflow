@@ -56,3 +56,83 @@
 .review-btn:hover{
     background-color: #0086d8;
 }
+
+.card-container {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0%;
+    height: 90vh;
+    background-color: #f1f2f3;
+}
+
+.card {
+    width: 300px;
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.card-content p {
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+li {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.payment {
+    margin-top: 15%;
+    margin-left: 5px;
+}
+
+.free-plan {
+    height: 202.578px;
+    background-color: rgb(82, 95, 127);
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 20px 12px;
+    line-height: 1.15;
+    color: #fff;
+}
+
+.free-plan button {
+    padding: 12px 70px;
+    border: none;
+    border-radius: 40px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background-color: rgb(0, 116, 212);
+    color: #ffffff;
+    text-align: center;
+    left: 50%;
+    cursor: pointer;
+}

@@ -3,25 +3,11 @@ import {useDispatch ,useSelector} from 'react-redux'
 import {useNavigate} from 'react-router-dom'
 import './AskQuestion.css'
 import {askQuestion} from '../../actions/question'
+import stripe from 'stripe'
 import moment from 'moment'
 
 const AskQuestion = () => {
     const User = useSelector((state) => (state.currentUserReducer))
-    let noOfQuestion = 0
-    let timeAsked
-    const questionList = useSelector((state) => (state.questionsReducer))
-    questionList.data.forEach(element => {
-        if(element.userId === User.result._id){
-            noOfQuestion = noOfQuestion + 1
-            timeAsked = (moment(element.askedOn).fromNow())
-        }
-    });
-    const [isAllowedToAsk, setisAllowedToAsk] = useState(false) 
-    console.log(noOfQuestion)
-    console.log(timeAsked)
-    if( timeAsked === '' || timeAsked === ''){
-        
-    }
     const [questionTitle, setQuestionTitle] = useState('')
     const [questionBody, setQuestionBody] = useState('')
     const [questionTags, setQuestionTags] = useState('')
@@ -32,8 +18,33 @@ const AskQuestion = () => {
         console.log({questionTitle,questionBody, questionTags })
         dispatch(askQuestion({questionTitle, questionBody, questionTags, userPosted : User.result.name , userId:User?.result?._id}, navigate ))
     }
+    const [isAllowedToAsk, setisAllowedToAsk] = useState(false) 
+    const questionList = useSelector((state) => (state.questionsReducer))
+    const preventer = () =>{
+        let noOfQuestion = 0
+        let timeAsked = ''
+        questionList.data.forEach(element => {
+            if(element.userId === User.result._id){
+                noOfQuestion = noOfQuestion + 1
+                timeAsked = element.askedOn.substr(8,2)
+            }
+        });
+        console.log(noOfQuestion)
+        console.log(timeAsked)
+        const currentDate = new Date()
+        const newCurrentDate = `${currentDate.getDate()}`
+        console.log(newCurrentDate)
+        if(noOfQuestion === 0 || timeAsked < newCurrentDate){
+            setisAllowedToAsk(true)
+        }
+        else{
+            alert('you have already asked question of a day')
+        }
+
+    }
   return (
     <div className="ask-question">
+        {isAllowedToAsk ? 
         <div className="ask-ques-container">
             <h1>Ask a public Question</h1>
             <form onSubmit={handleSubmit}>
@@ -56,7 +67,49 @@ const AskQuestion = () => {
                 </div>
                 <button type="submit" className='review-btn'>Review your question</button>
             </form>
+        </div>:
+        <div class="card-container">
+            <div class="card">
+                <div class="payment">
+                    <stripe-buy-button buy-button-id="buy_btn_1N42OiSH9jLmeq25kFJ2LwW0"
+                    publishable-key="pk_live_51N3g3dSH9jLmeq2574N9gNgxQFInxds8zEYt8G8CbWkaHguMPyoQWUMMn3d96K2X3YxV3Wkqwvq1Uo2riN0KW6h8009DPWRRId">
+                    </stripe-buy-button>
+                </div>
+                <div class="card-content">
+                    <h2>Gold Plan Benefits</h2>
+                    <li>&#x2714; Unlimited question</li>
+                    <li>&#x2714; No Adds</li>
+                    <li>&#x2714; Premium offers</li>
+                </div>
+            </div>
+            <div class="card">
+                <div class="payment">
+                    <stripe-buy-button buy-button-id="buy_btn_1N3gXISH9jLmeq25q5v5TMhs"
+                        publishable-key="pk_live_51N3g3dSH9jLmeq2574N9gNgxQFInxds8zEYt8G8CbWkaHguMPyoQWUMMn3d96K2X3YxV3Wkqwvq1Uo2riN0KW6h8009DPWRRId">
+                    </stripe-buy-button>
+                </div>
+                <div class="card-content">
+                    <h2>Silver Plan Benefits</h2>
+                    <li>&#x2714; 10 question a day</li>
+                    <li>&#x2714; No Adds</li>
+                    <li>&#x2718; Premium offers</li>
+                </div>
+            </div>
+            <div class="card">
+                <div class="payment free-plan">
+                    <h4>Free Plan</h4>
+                    <h2>&#8377; 0.00</h2>
+                    <button onClick={preventer}>Continue</button>
+                </div>
+                <div class="card-content">
+                    <h2>Free Plan</h2>
+                    <li>&#x2714; 1 question a day</li>
+                    <li>&#x2718; No Adds</li>
+                    <li>&#x2718; Premium offers</li>
+                </div>
+            </div>
         </div>
+        }
     </div>
   )
 }
