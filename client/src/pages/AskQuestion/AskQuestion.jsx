@@ -3,20 +3,35 @@ import {useDispatch ,useSelector} from 'react-redux'
 import {useNavigate} from 'react-router-dom'
 import './AskQuestion.css'
 import {askQuestion} from '../../actions/question'
+import moment from 'moment'
 
 const AskQuestion = () => {
+    const User = useSelector((state) => (state.currentUserReducer))
+    let noOfQuestion = 0
+    let timeAsked
+    const questionList = useSelector((state) => (state.questionsReducer))
+    questionList.data.forEach(element => {
+        if(element.userId === User.result._id){
+            noOfQuestion = noOfQuestion + 1
+            timeAsked = (moment(element.askedOn).fromNow())
+        }
+    });
+    const [isAllowedToAsk, setisAllowedToAsk] = useState(false) 
+    console.log(noOfQuestion)
+    console.log(timeAsked)
+    if( timeAsked === '' || timeAsked === ''){
+        
+    }
     const [questionTitle, setQuestionTitle] = useState('')
     const [questionBody, setQuestionBody] = useState('')
     const [questionTags, setQuestionTags] = useState('')
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const User = useSelector((state) => (state.currentUserReducer))
     const handleSubmit = (e)=>{
         e.preventDefault();
         console.log({questionTitle,questionBody, questionTags })
         dispatch(askQuestion({questionTitle, questionBody, questionTags, userPosted : User.result.name , userId:User?.result?._id}, navigate ))
     }
-    
   return (
     <div className="ask-question">
         <div className="ask-ques-container">
