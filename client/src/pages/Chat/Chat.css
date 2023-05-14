@@ -95,7 +95,7 @@
     left: calc(100% - 50% - 25%);
     margin: auto;
 }
-.container {
+.Auth-container {
     margin-top: 27px;
     max-width: 500px;
     margin: 0 auto;
@@ -109,10 +109,9 @@
     cursor: pointer;
     margin-bottom: 10px;
   }
-  .container{
+  .Auth-container{
     margin-top: 35px;
     height: 100vh;
-    max-width: 40%;
   }
   h1 {
     text-align: center;
@@ -148,10 +147,11 @@
       width: 100vw;
     }
     .chatbox{
-      min-width: 100vw;
+      min-width: 95vw;
     }
     .input-msg-form{
       min-width: 100vw;
+      top:80vh;
       left:10vw;
     }
     .chatbox .message.right{
@@ -163,5 +163,9 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+    }
+    .Auth-container{
+      width: 90vw;
+      align-self: center;
     }
 }

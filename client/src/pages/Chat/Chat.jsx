@@ -119,7 +119,7 @@ const sendMail = ()=>{
             </form>
           </div>
           :
-          <div class="container">
+          <div class="Auth-container">
             <h1>Authentication Page</h1>
             <form onSubmit={(e) => handleAuthentication(e)}>
               <label for="email">Email</label>
