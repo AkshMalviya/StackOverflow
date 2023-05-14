@@ -3,8 +3,6 @@ import {useDispatch ,useSelector} from 'react-redux'
 import {useNavigate} from 'react-router-dom'
 import './AskQuestion.css'
 import {askQuestion} from '../../actions/question'
-import stripe from 'stripe'
-import moment from 'moment'
 
 const AskQuestion = () => {
     const User = useSelector((state) => (state.currentUserReducer))
@@ -40,8 +38,7 @@ const AskQuestion = () => {
         else{
             alert('you have already asked question of a day')
         }
-
-    }
+    }    
   return (
     <div className="ask-question">
         {isAllowedToAsk ? 
@@ -71,7 +68,7 @@ const AskQuestion = () => {
         <div class="card-container">
             <div class="card">
                 <div class="payment">
-                    <stripe-buy-button buy-button-id="buy_btn_1N42OiSH9jLmeq25kFJ2LwW0"
+                    <stripe-buy-button buy-button-id="buy_btn_1N42OiSH9jLmeq25kFJ2LwW0" 
                     publishable-key="pk_live_51N3g3dSH9jLmeq2574N9gNgxQFInxds8zEYt8G8CbWkaHguMPyoQWUMMn3d96K2X3YxV3Wkqwvq1Uo2riN0KW6h8009DPWRRId">
                     </stripe-buy-button>
                 </div>
@@ -108,6 +105,7 @@ const AskQuestion = () => {
                     <li>&#x2718; Premium offers</li>
                 </div>
             </div>
+            <p>Note: After doing payment please click on continue button to continue asking the question</p>
         </div>
         }
     </div>
